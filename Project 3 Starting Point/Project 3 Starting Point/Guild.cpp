@@ -34,20 +34,33 @@ std::string Guild::GetInfo()
 			paladins++;	
 	}
 
-	output += mages	    > 0 ? std::to_string(mages) + " of those are mages\n"       : "No mages!\n";
-	output += rangers	> 0 ? std::to_string(rangers) + " of those are rangers\n"   : "No rangers!\n";
-	output += warriors	> 0 ? std::to_string(warriors) + " of those are warriors\n" : "No warriors!\n";
-	output += paladins	> 0 ? std::to_string(paladins) + " of those are paladins\n" : "No paladins!\n";
+	output += mages	    > 0 ? std::to_string(mages) + " of those are mages\n"       : "You have no mages!\n";
+	output += rangers	> 0 ? std::to_string(rangers) + " of those are rangers\n"   : "You have no rangers!\n";
+	output += warriors	> 0 ? std::to_string(warriors) + " of those are warriors\n" : "You have no warriors!\n";
+	output += paladins	> 0 ? std::to_string(paladins) + " of those are paladins\n" : "You have no paladins!\n";
 
 	return output;
 }
 
 std::string Guild::AttackWithAllAdventurers()
 {
-	std::string output = "You command everyone to attack! \n";
+	std::string output = "You command everyone to attack! \n\n";
 	for (auto adventurer : _adventurers)
 	{
 		output += adventurer->Attack() + "\n";
+	}
+	return output;
+}
+
+std::string Guild::AttackWithChoice(std::string type)
+{
+	std::string output = "You command everyone to attack! \n\n";
+	for (auto adventurer : _adventurers)
+	{
+		if (adventurer->getArchetype() == type)
+		{
+			output += adventurer->Attack() + "\n";
+		}
 	}
 	return output;
 }

@@ -24,5 +24,6 @@ public:
 	std::string GetInfo();
 
 	std::string AttackWithAllAdventurers();
+	std::string AttackWithChoice(std::string type);
 };
 
