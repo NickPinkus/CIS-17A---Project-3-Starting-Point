@@ -20,9 +20,9 @@ int main()
 	{
 		system("cls");
 		cout << "Now Managing " << guild->GetName() << endl << "****************************" << endl;
-		cout << "1) Display Guild Information" << endl;
-		cout << "2) Add An Adventurer" << endl;
-		cout << "3) Attack!" << endl;
+		cout << "1) Display Guild Information"		<< endl;
+		cout << "2) Add An Adventurer"				<< endl;
+		cout << "3) Attack!"						<< endl;
 		cin >> choice;
 
 		switch (choice) 
@@ -54,19 +54,19 @@ void AddAdventurer(const shared_ptr<Guild> guild)
 	system("cls");
 
 	cout << "What type of adventurer would you like to add?" << endl;
-	cout << "1) Mage" << endl;
-	cout << "2) Ranger" << endl;
-	cout << "3) Paladin" << endl;
-	cout << "4) Warrior" << endl;
+	cout << "1) Mage"		<< endl;
+	cout << "2) Ranger"		<< endl;
+	cout << "3) Paladin"	<< endl;
+	cout << "4) Warrior"	<< endl;
 
 	int choice = -1;
 	cin >> choice;
 	switch (choice)
 	{
-	case 1: guild->AddAdventurer(make_shared<Mage>(name)); break;
-	case 2: guild->AddAdventurer(make_shared<Ranger>(name)); break;
-	case 3: guild->AddAdventurer(make_shared<Paladin>(name)); break;
-	case 4: guild->AddAdventurer(make_shared<Warrior>(name)); break;
+	case 1: guild->AddAdventurer(make_shared<Mage>(name));		break;
+	case 2: guild->AddAdventurer(make_shared<Ranger>(name));	break;
+	case 3: guild->AddAdventurer(make_shared<Paladin>(name));	break;
+	case 4: guild->AddAdventurer(make_shared<Warrior>(name));	break;
 	default: cout << "Invalid choice!"; break;
 	}
 	system("pause");
